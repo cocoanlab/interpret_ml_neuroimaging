@@ -9,9 +9,11 @@ heat_imgs = filenames(fullfile(basedir, 'data', 'images', 'sub*', 'heat_*.nii'))
 rejection_imgs = filenames(fullfile(basedir, 'data', 'images', 'sub*', 'rejection_*.nii'));
 data = fmri_data([heat_imgs; rejection_imgs], gray_matter_mask);
 
-% load data already stored in fmri_data object
-data_file = fullfile(basedir, 'data', 'dat_obj', 'heat_rejection_datobj.mat'); %heat vs. rejection instead + change in the methods
-load(data_file);
+% % load data already stored in fmri_data object
+% % // couldn't save the heat_rejection_datobj.mat file in the github due
+% % // to the file size limit.
+% data_file = fullfile(basedir, 'data', 'dat_obj', 'heat_rejection_datobj.mat'); %heat vs. rejection instead + change in the methods
+% load(data_file);
 
 %% OPTIONAL: You can apply a mask
 
