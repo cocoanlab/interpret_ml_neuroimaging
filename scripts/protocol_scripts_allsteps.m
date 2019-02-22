@@ -1,7 +1,7 @@
 %% Step 1: Model building (Timing 20 mins – a few hours)
 
-%% read image files or load data
-basedir = '/Users/clinpsywoo/Nas/xain/publish_scripts';
+%% read image files or load dat
+basedir = 'path/to/directory/interpret_ml_neuroimaging';
 gray_matter_mask = which('gray_matter_mask.img');
 
 %% read images
@@ -27,7 +27,6 @@ data.Y = [ones(numel(heat_imgs),1); -ones(numel(rejection_imgs),1)]; % heat: 1, 
 %% Training
 
 [~, stats] = predict(data, 'algorithm_name', 'cv_svm', 'nfolds', 1, 'error_type', 'mcr');
-
 
 %% Step 2: Cross-validated performance assessment (Timing 5 mins-20 mins)
 
@@ -86,6 +85,7 @@ out = svm_rfe(data, 'n_removal', 5000, 'n_finalfeat', 30000, 'algorithm_name', '
 % visualizing bootstrap test results
 orthviews(data_threshold);
 % writing thresholded bootstrap test result image as a Nifti file
+mkdir(basedir, 'results')
 data_threshold.fullpath = fullfile(basedir, 'results', 'svm_bootstrap_results_fdr05.nii'); 
 write(data_threshold, 'thresh');
 
