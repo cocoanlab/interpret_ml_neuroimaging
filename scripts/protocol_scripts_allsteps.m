@@ -93,7 +93,7 @@ write(data_threshold, 'thresh');
 orthviews(out.smallestnfeat_stats.weight_obj);
 % writing RFE analysis results as a Nifti file
 out.smallestnfeat_stats.weight_obj.fullpath = fullfile(basedir, 'results', 'svm_RFE_results_nfeat_30000.nii'); 
-write(data_threshold, 'thresh');
+write(out.smallestnfeat_stats.weight_obj);
 
 %% 4C: Virtual lesion analysis
 
