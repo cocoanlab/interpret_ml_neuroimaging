@@ -1,2 +1,48 @@
-# interpret_ml_neuroimaging
-Codes and datasets for "Interpreting machine learning models in neuroimaging: a unified framework"
+# Interpreting machine learning models in neuroimaging
+This repository includes codes and sample fMRI data used in **Interpreting machine learning models in neuroimaging: Towards a unified framework**.  
+## Dependecies
+To run the **Matlab scripts** `protocol_scripts_allsteps.m` and `cnn_data_preparation.m`: 
+
++ [CanlabCore tools] (https://github.com/canlab/CanlabCore) - For full functionality, make sure to install:
+	1. Matlab Statistics and Machine Learning toolbox
+	2. Matlab Signal Processing toolbox
+	3. [Statistical Parametric Mapping (SPM) toolbox] (https://www.fil.ion.ucl.ac.uk/spm/) 
+
+The Matlab script `protocol_scripts_allsteps.m` was tested on macOS High Sierra with Matlab 9.5 R2018b.
+
+To run the codes related to the **deep learning analyses**:  
+
++ [Python] (https://www.python.org/downloads/) 3.6.5 or higher with a module Numpy
++ [Keras 2.2.0] (https://keras.io) (Python Deep Learning library) 
++ [TensorFlow 1.8.0] (https://www.tensorflow.org/install/) 
++ [iNNvestigate] (https://github.com/albermax/innvestigate) (Keras explanation toolbox)
++ H5py 2.8.0 (Python interface to the hdf5 data format)
++ **Other dependencies:** CUDA 9.2, CuDNN 7.1 (Nvidia GPU libraries)
+
+
+## Installation
+After downloading and installing all dependencies, download this repository using the following command line:  
+```
+$ git clone https://github.com/cocoanlab/interpret_ml_neuroimaging
+```  
+
+Make sure to set your Matlab path to include all dependent toolboxes.  
+
+## How to run the codes
+### Linear models 
+The Matlab script `protocol_scripts_allsteps.m` contains all analyses performed on linear models.  
+A user is only required to set the path in the following code line:
+```
+basedir = 'path/to/directory/interpret_ml_neuroimaging';
+```  
+
+The rest of the code can be run automatically section by section without an input from the user. The code uses a sample fMRI dataset from [Woo et al., 2014] (https://www.nature.com/articles/ncomms6380), and the path to the data directory is set in the script.  
+
+The script includes **7 steps** of model development and interpretation. In **Step 1**, a Support Vector Machine (SVM) Model is built. The output is an `fmri_data` object with a `.weight_obj` field which contains the model weights in `.dat` field. **Step 2** returns the cross-validated performance using either 8-fold cross-validation or leave-one-subject-out cross-validation. In **Step 3**, the previously built model is test for potential confounds. The output can be found in `stats_nuistest.pred_outcome_r`. **Step 4** includes four options: option **A** - Bootstrap tests, option **B** - Recursive Feature Analysis, and option **C** - "Virtual lesion" analysis. Options **A** and **B** return significant voxels in the SVM model, whereas option **C** tests significance of large-scale resting state networks in predictions. Sample results are provided in the script. In **Step 5**, an example of generalizability testing is provided. it returns the performance of the different models at classifying between two pairs of stimuli. **Step 6** returns the posterior porbability of observing overlaps of the boostrap thresholded model with large-scale functional networks. Finally, **Step 7** illustrates a representational analysis performed with two different models and four types of stimuli.  
+
+The typical **run time** of the whole script with the sample data on a standard desktop computer is about **12 to 15 hours**.
+
+### Nonlinear models  
+To run the nonlinear example, start with preparing the data with the Matlab script `cnn_data_preparation.m` which returns the data in 4-D space. Next, run `data_generation_for_protocol_lrp_script.py` to convert the data format into `.hdf5`. Finally, use `protocol_lrp_script.ipynb` to run the nonlinear model analyses.
+## Instructions for use
+We encourage researchers to use the provided codes and apply them to their own data. To do so, set the Matlab path to the directory of the dataset to be analysed. The format of input data should be either NIfTI format (.nii) or Analyze format (.img and .hdr).
