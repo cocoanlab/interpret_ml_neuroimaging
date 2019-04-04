@@ -1,6 +1,6 @@
 # Interpreting machine learning models in neuroimaging
 This repository includes Matlab and Python codes and sample fMRI data used in **Interpreting machine learning models in neuroimaging: Towards a unified framework**.  
-## Dependecies
+## Dependencies
 To run the **Matlab scripts** `protocol_scripts_allsteps.m` and `cnn_data_preparation.m`: 
 
 + [CanlabCore tools](https://github.com/canlab/CanlabCore) - For full functionality, make sure to install:
