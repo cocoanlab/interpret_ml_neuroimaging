@@ -8,8 +8,8 @@ gray_matter_mask = which('gray_matter_mask.img');
 
 %% Load data
 
-heat_imgs = filenames(fullfile(basedir, 'images', 'sub*', 'heat_*.nii'));
-rejection_imgs = filenames(fullfile(basedir, 'images', 'sub*', 'rejection_*.nii'));
+heat_imgs = filenames(fullfile(basedir, 'data', 'derivatives', 'trial_images', 'sub*', 'heat_*.nii'));
+rejection_imgs = filenames(fullfile(basedir, 'data', 'derivatives', 'trial_images', 'sub*', 'rejection_*.nii'));
 
 data_heat = fmri_data(heat_imgs, gray_matter_mask);
 data_rej = fmri_data(rejection_imgs, gray_matter_mask);

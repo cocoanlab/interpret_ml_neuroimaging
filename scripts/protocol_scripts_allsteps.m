@@ -5,8 +5,8 @@ basedir = 'path/to/directory/interpret_ml_neuroimaging';
 gray_matter_mask = which('gray_matter_mask.img');
 
 %% read images
-heat_imgs = filenames(fullfile(basedir, 'data', 'images', 'sub*', 'heat_*.nii'));
-rejection_imgs = filenames(fullfile(basedir, 'data', 'images', 'sub*', 'rejection_*.nii'));
+heat_imgs = filenames(fullfile(basedir, 'data', 'derivatives', 'trial_images', 'sub*', 'heat_*.nii'));
+rejection_imgs = filenames(fullfile(basedir, 'data', 'derivatives', 'trial_images', 'sub*', 'rejection_*.nii'));
 data = fmri_data([heat_imgs; rejection_imgs], gray_matter_mask);
 
 % % load data already stored in fmri_data object
@@ -54,7 +54,7 @@ ROC_8fold = roc_plot(stats_8fold.dist_from_hyperplane_xval, data.Y == 1, 'thresh
 %% Step 3: Analysis of confounds (Timing 5 mins-20 mins)
 
 % Load nuisance data that are previously saved
-nuisance_file = fullfile(basedir, 'data', 'nuisance.mat'); 
+nuisance_file = fullfile(basedir, 'data', 'derivatives', 'nuisance.mat'); 
                     % Example nuisance data: Mean framewise displacement (z-scored; roll, pitch, yaw, x, y, z; 6 columns)
 load(nuisance_file);
 
@@ -180,10 +180,10 @@ nps = which('weights_NSF_grouppred_cvpcr.img');
 siips = which('nonnoc_v11_4_137subjmap_weighted_mean.nii');
 
 % load contrast image data
-cont_imgs{1} = filenames(fullfile(basedir, 'data', 'contrast_images', 'heat*nii'), 'char');
-cont_imgs{2} = filenames(fullfile(basedir, 'data', 'contrast_images', 'warmth*nii'), 'char');
-cont_imgs{3} = filenames(fullfile(basedir, 'data', 'contrast_images', 'rejection*nii'), 'char');
-cont_imgs{4} = filenames(fullfile(basedir, 'data', 'contrast_images', 'friend*nii'), 'char');
+cont_imgs{1} = filenames(fullfile(basedir, 'data', 'derivatives', 'contrast_images', 'heat*nii'), 'char');
+cont_imgs{2} = filenames(fullfile(basedir, 'data', 'derivatives', 'contrast_images', 'warmth*nii'), 'char');
+cont_imgs{3} = filenames(fullfile(basedir, 'data', 'derivatives', 'contrast_images', 'rejection*nii'), 'char');
+cont_imgs{4} = filenames(fullfile(basedir, 'data', 'derivatives', 'contrast_images', 'friend*nii'), 'char');
 
 data_test = fmri_data(cont_imgs, gray_matter_mask);
 
