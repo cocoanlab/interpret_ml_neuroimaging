@@ -10,7 +10,7 @@ To run the **Matlab scripts** `protocol_scripts_allsteps.m`:
 
 The Matlab script `protocol_scripts_allsteps.m` was tested on macOS High Sierra with Matlab 9.5 R2018b.
 
-To run the codes related to the **deep learning analyses**:  
+To run the codes related to the **deep learning analyses** `cnn_lrp.ipynb`:  
 
 + [Python](https://www.python.org/downloads/) 3.6.5 or higher with a module Numpy
 + [Keras 2.2.4](https://keras.io) (Python Deep Learning library) 
