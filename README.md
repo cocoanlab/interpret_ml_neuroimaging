@@ -1,7 +1,7 @@
 # Interpreting machine learning models in neuroimaging
 This repository includes Matlab and Python codes and sample fMRI data used in **Interpreting machine learning models in neuroimaging: Towards a unified framework**.  
 ## Dependencies
-To run the **Matlab scripts** `protocol_scripts_allsteps.m` and `cnn_data_preparation.m`: 
+To run the **Matlab scripts** `protocol_scripts_allsteps.m`: 
 
 + [CanlabCore tools](https://github.com/canlab/CanlabCore) - For full functionality, make sure to install:
 	1. Matlab Statistics and Machine Learning toolbox
@@ -13,11 +13,15 @@ The Matlab script `protocol_scripts_allsteps.m` was tested on macOS High Sierra 
 To run the codes related to the **deep learning analyses**:  
 
 + [Python](https://www.python.org/downloads/) 3.6.5 or higher with a module Numpy
-+ [Keras 2.2.0](https://keras.io) (Python Deep Learning library) 
++ [Keras 2.2.4](https://keras.io) (Python Deep Learning library) 
 + [TensorFlow 1.8.0](https://www.tensorflow.org/install/) 
++ [Scikit-learn 0.20.3](https://scikit-learn.org/stable/install.html) 
++ [Pandas 0.25.0](https://pandas.pydata.org/pandas-docs/stable/install.html) 
++ [Scipy 1.3.0](https://www.tensorflow.org/install/) 
++ [Nilearn 0.5.2](http://nilearn.github.io/introduction.html#installation) 
++ [Nipype 1.2.0](https://nipype.readthedocs.io/en/latest/users/install.html) 
 + [iNNvestigate](https://github.com/albermax/innvestigate) (Keras explanation toolbox)
-+ H5py 2.8.0 (Python interface to the hdf5 data format)
-+ **Other dependencies:** CUDA 9.2, CuDNN 7.1 (Nvidia GPU libraries)
++ **Other dependencies:** CUDA, CuDNN (Nvidia GPU libraries)
 
 
 ## Installation
