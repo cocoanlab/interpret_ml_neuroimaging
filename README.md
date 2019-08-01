@@ -47,6 +47,11 @@ The script includes **7 steps** of model development and interpretation. In **St
 The typical **run time** of the whole script with the sample data on a standard desktop computer is about **12 to 15 hours**.
 
 ### Nonlinear models  
+To run the nonlinear example, run `cnn_lrp.ipynb`
+
+-old
+
 To run the nonlinear example, start with preparing the data with the Matlab script `cnn_data_preparation.m` which returns the data in 4-D space. Next, run `data_generation_for_protocol_lrp_script.py` to convert the data format into `.hdf5`. Finally, use `protocol_lrp_script.ipynb` to run the nonlinear model analyses.
+
 ## Instructions for use
 We encourage researchers to use the provided codes and apply them to their own data. To do so, set the Matlab path to the directory of the dataset to be analysed. The format of input data should be either NIfTI format (.nii) or Analyze format (.img and .hdr).
