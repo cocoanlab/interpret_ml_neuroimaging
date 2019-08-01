@@ -56,6 +56,8 @@ The typical **run time** of the whole script with the sample data on a standard 
 ### Nonlinear models  
 To run the nonlinear example, run `cnn_lrp.ipynb`
 
+<It is updating now : sungwoo>
+
 - **Part0** is Description about how anaysis will be run.
 - **Part1** Initializing Data Matrix
 - **Part2** Loading Data Function
