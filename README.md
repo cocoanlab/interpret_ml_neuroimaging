@@ -55,18 +55,17 @@ The typical **run time** of the whole script with the sample data on a standard 
 
 ### Nonlinear models  
 To run the nonlinear example, run `cnn_lrp.ipynb`
+To run `cnn_lrp.ipynb`, you need to use [jupyter notebook](https://jupyter.org/).
 
-`*It is updating now : sungwoo*`
-
-- **Part0** is Description about how anaysis will be run.
-- **Part1** Initializing Data Matrix
-- **Part2** Loading Data Function
-- **Part3** CNN Model
-- **Part4** Model Training example
-- **Part5** Leave-One_Subject-Out Cross-validation
-- **Part6** Total Accuracy
-- **Part7** Layer-wise Relevance Propagation
-- **Part8** Visualization
+- **Part0** is Description about how anaysis will be run. 
+- **Part1** is about initializing Data Matrix which will contain data infromation for analysis.
+- **Part2** is for making Loading Data Function which will load numpy array type data from data path in Data Matrix.
+- **Part3** is builing CNN Model and define training function.
+- **Part4** is a Model Training example.
+- **Part5** is main training of Leave-One_Subject-Out Cross-validation. This will be 59 fold cross-validation.
+- **Part6** is getting the Total Accuracy of 59 fold cross-validation
+- **Part7** is about Layer-wise Relevance Propagation(LRP)
+- **Part8** is about Visualization of LRP results.
 
 ## Instructions for use
 We encourage researchers to use the provided codes and apply them to their own data. To do so, set the Matlab path to the directory of the dataset to be analysed. The format of input data should be either NIfTI format (.nii) or Analyze format (.img and .hdr).
