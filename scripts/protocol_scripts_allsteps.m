@@ -28,7 +28,7 @@ data.Y = [ones(numel(heat_imgs),1); -ones(numel(rejection_imgs),1)]; % heat: 1, 
 
 [~, stats] = predict(data, 'algorithm_name', 'cv_svm', 'nfolds', 1, 'error_type', 'mcr');
 
-%% Step 2: Cross-validated performance assessment (Timing 5 mins-20 mins)
+%% Steps 2-3: Cross-validated performance assessment (Timing 5 mins-20 mins)
 
 %% Training SVM with leave-one-subject-out (LOSO) cross-validation
 
@@ -51,7 +51,7 @@ ROC_loso = roc_plot(stats_loso.dist_from_hyperplane_xval, data.Y == 1, 'threshol
 % 8-fold cross-validation
 ROC_8fold = roc_plot(stats_8fold.dist_from_hyperplane_xval, data.Y == 1, 'threshold', 0);
 
-%% Step 3: Analysis of confounds (Timing 5 mins-20 mins)
+%% Steps 4-6: Analysis of confounds (Timing 5 mins-20 mins)
 
 % Load nuisance data that are previously saved
 nuisance_file = fullfile(basedir, 'data', 'derivatives', 'nuisance.mat'); 
@@ -68,7 +68,7 @@ dat_nuistest.Y = stats_loso.dist_from_hyperplane_xval;
 
 % output: stats_nuistest.pred_outcome_r = 0.3273
 
-%% Step 4: Identify important features
+%% Step 7: Identify important features
 
 %% 4A: Bootstrap tests
 
@@ -173,7 +173,7 @@ table(network_names', out.num_vox, out.acc, out.se, out.p, 'VariableNames', {'Ne
 %     'Default'           36828     0.70127     0.014897             0
 
 
-%% Step 5: Test generalizability
+%% Steps 8-10: Test generalizability
 
 % a priori models: NPS and SIIPS1
 nps = which('weights_NSF_grouppred_cvpcr.img');
@@ -205,7 +205,7 @@ roc_siips_pain_warmth = roc_plot([pexp_siips(:,1);pexp_siips(:,2)], [true(59,1);
 % SIIPS1 for rejection vs. friend
 roc_siips_rejection_friend = roc_plot([pexp_siips(:,3);pexp_siips(:,4)], [true(59,1);false(59,1)], 'twochoice');
 
-%% Step 6: Biology-level assessment
+%% Step 11: Biology-level assessment
 
 %% 6A: Relationship with large-scale functional networks (bootstrap results)
 
@@ -227,7 +227,7 @@ overlap_neg = canlab_pattern_similarity(dat, pattern_thresh<0, 'posterior_overla
 % colors = {[1 0 0], [0 0 1]};
 % tor_polar_plot({[overlap_pos overlap_neg].*100}, colors, {network_names}, 'fixedrange', [0 24]);
 
-%% Step 7: Representational analysis
+%% Steps 12-15: Representational analysis
 
 nps_acc = zeros(4,4); 
 siips_acc = zeros(4,4); 
