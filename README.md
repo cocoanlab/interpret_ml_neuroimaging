@@ -20,6 +20,7 @@ To run the codes related to the **deep learning analyses** `cnn_lrp.ipynb`:
 + [Scipy 1.3.0](https://www.tensorflow.org/install/) 
 + [Nilearn 0.5.2](http://nilearn.github.io/introduction.html#installation) 
 + [Nipype 1.2.0](https://nipype.readthedocs.io/en/latest/users/install.html) 
++ [Nistats 0.0.1b](https://nistats.github.io/index.html)
 + [iNNvestigate](https://github.com/albermax/innvestigate) (Keras explanation toolbox)
 + **Other dependencies:** CUDA, CuDNN (Nvidia GPU libraries)
 
