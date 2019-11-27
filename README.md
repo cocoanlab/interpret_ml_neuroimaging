@@ -24,7 +24,7 @@ To run the codes related to the **deep learning analyses** `cnn_lrp.ipynb`:
 + [Nipype 1.2.0](https://nipype.readthedocs.io/en/latest/users/install.html) 
 + [Nistats 0.0.1b](https://nistats.github.io/index.html)
 + [iNNvestigate](https://github.com/albermax/innvestigate) (Keras explanation toolbox)
-+ **Other dependencies:** CUDA, CuDNN (Nvidia GPU libraries) - Only for training deep learning model using GPU [GPU support | Tensorflow](https://www.tensorflow.org/install/gpu)
++ **Other dependencies:** CUDA, CuDNN ([GPU support | Tensorflow](https://www.tensorflow.org/install/gpu)) - Only for training deep learning model using GPU 
 
 
 ## Installation
