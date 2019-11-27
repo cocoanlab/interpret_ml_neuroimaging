@@ -45,30 +45,31 @@ basedir = 'path/to/directory/interpret_ml_neuroimaging';
 
 The rest of the code can be run automatically section by section without an input from the user. The code uses a sample fMRI dataset from [Woo et al., 2014](https://www.nature.com/articles/ncomms6380), and the path to the data directory is set in the script.  
 
-The script includes **7 steps** of model development and interpretation. 
+The script includes **15 steps** of model development and interpretation that correspond to the procedure introduced in our paper. 
+
 - In **Step 1**, a Support Vector Machine (SVM) Model is built. The output is an `fmri_data` object with a `.weight_obj` field which contains the model weights in `.dat` field. 
-- **Step 2** returns the cross-validated performance using either 8-fold cross-validation or leave-one-subject-out cross-validation. 
-- In **Step 3**, the previously built model is tested for potential confounds. The output can be found in `stats_nuistest.pred_outcome_r`. 
-- **Step 4** includes four options: option **A** - Bootstrap tests, option **B** - Recursive Feature Elimination, and option **C** - "Virtual lesion" analysis. Options **A** and **B** return significant voxels in the SVM model, whereas option **C** tests significance of large-scale resting state networks in predictions. Sample results of the "virtual lesion" analysis are provided in the script. 
-- In **Step 5**, an example of generalizability testing is provided. Here we test the performance of the Neurologic Pain Signature (NPS), [Wager et al., 2013](https://www.nejm.org/doi/full/10.1056/NEJMoa1204471) and Stimulus Intensity Independent Pain Signature-1 (SIIPS1), [Woo et al., 2017](https://www.nature.com/articles/ncomms14211) on the sample dataset. 
-- **Step 6** returns the posterior probability of observing overlaps of the boostrap thresholded model with large-scale functional networks. Finally, 
-- **Step 7** illustrates a representational analysis performed with NPS and SIIPS1 and the sample dataset.  
+- **Steps 2 - 3** return the cross-validated performance using either 8-fold cross-validation or leave-one-subject-out cross-validation. 
+- In **Steps 4 - 6**, the previously built model is tested for potential confounds. The output can be found in `stats_nuistest.pred_outcome_r`. 
+- **Step 7** includes three options: option **A** - Bootstrap tests, option **B** - Recursive Feature Elimination, and option **C** - "Virtual lesion" analysis. Options **A** and **B** return significant voxels in the SVM model, whereas option **C** tests significance of large-scale resting state networks in predictions. Sample results of the "virtual lesion" analysis are provided in the script. 
+- In **Steps 8 - 10**, an example of generalizability testing is provided. Here we test the performance of the Neurologic Pain Signature (NPS), [Wager et al., 2013](https://www.nejm.org/doi/full/10.1056/NEJMoa1204471) and Stimulus Intensity Independent Pain Signature-1 (SIIPS1), [Woo et al., 2017](https://www.nature.com/articles/ncomms14211) on the sample dataset. 
+- **Step 11** returns the posterior probability of observing overlaps of the boostrap thresholded model with large-scale functional networks.  
+- Finally, **Steps 12 - 15** illustrate a representational analysis performed with NPS and SIIPS1 and the sample dataset.  
 
 The typical **run time** of the whole script with the sample data on a standard desktop computer is about **12 to 15 hours**.
 
 ### Nonlinear models  
-To run the nonlinear example, run `cnn_lrp.ipynb`
+To run the nonlinear example, run `cnn_lrp.ipynb`.
 To run `cnn_lrp.ipynb`, you need to use [jupyter notebook](https://jupyter.org/).
 
-- **Part0** is Description about how anaysis will be run. 
-- **Part1** is about initializing Data Frame which will contain data infromation for analysis.
-- **Part2** is for making Loading Data Function which will load numpy array type data from data path in Data Frame.
-- **Part3** is builing CNN Model and define training function.
+- **Part0** is a description about how the analysis will be run. 
+- **Part1** initializes a Data Frame which will contain information about the data for the analysis.
+- In **Part2**, we create a Loading Data Function to load numpy array type data from data path in Data Frame.
+- **Part3** builds a CNN Model and defines the training function.
 - **Part4** is a Model Training example.
-- **Part5** is main training of Leave-One_Subject-Out Cross-validation. This will be 59 fold cross-validation.
-- **Part6** is getting the Total Accuracy of 59 fold cross-validation
-- **Part7** is about Layer-wise Relevance Propagation(LRP)
-- **Part8** is about Visualization of LRP results.
+- **Part5** is the main training part which performs leave-one-subject-out cross-validation. This will be a 59-fold cross-validation.
+- **Part6** calculates the Total Accuracy of the 59-fold cross-validation.
+- **Part7** performs the Layer-wise Relevance Propagation (LRP).
+- **Part8** visualizes the LRP results.
 
 ## Instructions for use
 We encourage researchers to use the provided codes and apply them to their own data. To do so, set the Matlab path to the directory of the dataset to be analysed. The format of input data should be either NIfTI format (.nii) or Analyze format (.img and .hdr).
