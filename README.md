@@ -12,7 +12,7 @@ The Matlab script `protocol_scripts_allsteps.m` was tested on macOS High Sierra 
 
 To run the codes related to the **deep learning analyses** `cnn_lrp.ipynb`:  
 
-+ [Python](https://www.python.org/downloads/) 3.6.5 or higher with a module Numpy
++ [Python](https://www.python.org/downloads/) 3.6.5 or higher
 + [Keras 2.2.4](https://keras.io) (Python Deep Learning library) 
 + [TensorFlow 1.8.0](https://www.tensorflow.org/install/) 
 + [Scikit-learn 0.20.3](https://scikit-learn.org/stable/install.html) 
