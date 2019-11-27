@@ -62,7 +62,7 @@ To run `cnn_lrp.ipynb`, you need to use [jupyter notebook](https://jupyter.org/)
 
 - **Part0** is Description about how anaysis will be run. 
 - **Part1** is about initializing Data Matrix which will contain data infromation for analysis.
-- **Part2** is for making Loading Data Function which will load numpy array type data from data path in Data Matrix.
+- **Part2** is for making Loading Data Function which will load numpy array type data from data path in Data Frame.
 - **Part3** is builing CNN Model and define training function.
 - **Part4** is a Model Training example.
 - **Part5** is main training of Leave-One_Subject-Out Cross-validation. This will be 59 fold cross-validation.
