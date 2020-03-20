@@ -1,5 +1,5 @@
 # Interpreting machine learning models in neuroimaging
-This repository includes Matlab and Python codes and sample fMRI data used in our Nature Protocols paper **[Toward a unified framework for interpreting machine-learning models in neuroimaging] (https://www.nature.com/articles/s41596-019-0289-5)**.  
+This repository includes Matlab and Python codes and sample fMRI data used in our Nature Protocols paper **[Toward a unified framework for interpreting machine-learning models in neuroimaging](https://www.nature.com/articles/s41596-019-0289-5)**.  
 ## Dependencies
 To run the **Matlab scripts** `protocol_scripts_allsteps.m`: 
 
